@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed, 
+    figure, figcaption, footer, header, hgroup, 
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure, 
+    footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+    body {
+        line-height: 1;
+        height: 100vh;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+}
+
+
+@layer components {
+    .btn-green{
+        @apply rounded-lg bg-gradient-to-br from-teal-300 to-lime-300 p-0.5 text-sm font-medium text-gray-900 focus:outline-none focus:ring-4 focus:ring-lime-200 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 dark:focus:ring-commerce-teal-2 transition ease-in duration-200
+    }
+}
+
+@layer utilities {
+
+    /******************************** Navbar başlıklarının efekti ***********************/
+    .navi-efect{
+       position: relative;
+       display: inline-block;
+       cursor: pointer;
+       color:white;
+    }
+
+    .navi-efect::before,
+    .navi-efect::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #80ED99;
+        transform: scaleX(0);
+        transition: transform 0.4s;
+    }
+
+    .navi-efect::before{
+        top: -3px;
+        transform-origin: left;
+    }
+
+    .navi-efect::after{
+        bottom: -3px;
+        transform-origin: right;
+    }
+
+    .navi-efect:hover::before,
+    .navi-efect:hover::after,
+    .active::before,
+    .active::after{
+        transform: scaleX(1);
+    }
+
+    /******************************** Navbar başlıklarının efekti ***********************/
+
+
+    /******************************** Navbar toggledaki bulanıklık efekti telefon için ***********************/
+    .box-wrap{
+        --tw-space-y-reverse: 0;
+        margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+        margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
+        padding-left: 0.5rem/* 8px */;
+        padding-right: 0.5rem/* 8px */;
+        padding-bottom: 0.75rem;
+        padding-top: 0.5rem;
+    }
+      .box{
+        box-shadow:0 2px 3px 0px rgba(0,0,0,0.25);
+        border-radius:3px;
+        transition:.2s all; 
+      }
+      .box-wrap:hover .box{
+        filter:blur(3px);
+        opacity:.5;
+        transform: scale(.98);
+        box-shadow:none;
+      }
+      .box-wrap:hover .box:hover{
+        transform:scale(1);
+        filter:blur(0px);
+        opacity:1;
+        box-shadow:0 8px 20px 0px rgba(0,0,0,0.125);
+      }
+    /******************************** Navbar toggledaki bulanıklık efekti telefon için ***********************/
+
+}
