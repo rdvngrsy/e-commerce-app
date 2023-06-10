@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import NavButton from "./NavButton";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,16 +16,25 @@ const Navbar = () => {
           {/********************************************* MENU CONTENT *************************************/}
 
           <div className="shrink-0 basis-1/3 md:basis-1/6">
-            <h1 className="font-oswald text-xl font-bold text-white">
+            <Link
+              to="/"
+              className="font-oswald text-xl font-bold text-white"
+            >
               E-SATIŞ
-            </h1>
+            </Link>
           </div>
 
           <div className="hidden md:flex md:basis-4/6 md:justify-center">
             <ul className="flex items-baseline space-x-28 font-oswald text-lg font-bold ">
-              <li className="navi-efect">Menu 1</li>
-              <li className="navi-efect">Menu 2</li>
-              <li className="navi-efect">Menu 3</li>
+              <Link to="/" className="navi-efect">
+                Home
+              </Link>
+              <Link to="/menu2" className="navi-efect">
+                Menu 2
+              </Link>
+              <Link to="/menu3" className="navi-efect">
+                Menu 3
+              </Link>
             </ul>
           </div>
           {/********************************************* MENU CONTENT *************************************/}
@@ -45,9 +55,9 @@ const Navbar = () => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 ></path>
               </svg>
             </button>
@@ -56,10 +66,12 @@ const Navbar = () => {
           {/********************************************* TOGGLE BUTTON *************************************/}
 
           <div className="flex basis-1/3 justify-end  md:basis-1/6 ">
-            <div className="mr-3">
-              <NavButton text="Signin" />
-            </div>
-            <NavButton text="Login" />
+            <Link to="/signup" className="mr-3">
+              <NavButton text="Sign up" />
+            </Link>
+            <Link to="/login">
+              <NavButton text="Log in" />
+            </Link>
           </div>
         </div>
       </div>
@@ -70,24 +82,24 @@ const Navbar = () => {
         } bg-commerce-teal-2 md:hidden `}
       >
         <div className="box-wrap font-oswald sm:px-3">
-          <a
-            href="#"
+          <Link
+            to="/home"
             className="box block rounded-md px-3 py-2  text-lg font-medium text-white transition duration-200 ease-in hover:bg-commerce-blue hover:text-gray-300"
           >
-            Menu 1
-          </a>
-          <a
-            href="#"
+            Home
+          </Link>
+          <Link
+            to="/menu2"
             className="box block rounded-md px-3 py-2  text-lg font-medium text-white transition duration-200 ease-in hover:bg-commerce-blue hover:text-gray-300"
           >
             Menu 2
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="/menu3"
             className="box block rounded-md px-3 py-2  text-lg font-medium text-white transition duration-200 ease-in hover:bg-commerce-blue hover:text-gray-300"
           >
             Menu 3
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
