@@ -10,7 +10,15 @@ const ProductSchema = new Schema({
   description: {
     type: String,
   },
+  category: {
+    type: String,
+    required: true,
+  },
   price: {
+    type: Number,
+    required: true,
+  },
+  previous_price: {
     type: Number,
     required: true,
   },

@@ -10,6 +10,9 @@ export default {
       'zilla-slab': ['Zilla Slab', 'serif'],
     },
     screens: {
+      'xs': '600px',
+      // => @media (min-width: 520px) { ... }
+
       'sm': '640px',
       // => @media (min-width: 640px) { ... }
 

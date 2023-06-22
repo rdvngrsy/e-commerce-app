@@ -3,7 +3,7 @@ import "../Card/Card.css";
 
 const Card = ({item}) => {
   return (
-    <div className="border-grey-100 group flex w-full max-w-xs flex-col self-center overflow-hidden rounded-lg border  bg-commerce-blue shadow-lg">
+    <div className=" border-grey-100 group flex w-full max-w-xs flex-col self-center overflow-hidden rounded-lg border  bg-commerce-blue shadow-lg c">
       <a
         className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
         href="#"
@@ -93,7 +93,7 @@ const Card = ({item}) => {
         <div className="flex items-center justify-between">
           <p>
             <span className="text-3xl font-bold text-white">${item.price}</span>
-            <span className="text-sm text-white line-through">$299</span>
+            <span className="text-sm text-white line-through">${item.previous_price}</span>
           </p>
           <a
             href="#"
