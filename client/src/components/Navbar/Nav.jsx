@@ -27,7 +27,7 @@ const Navbar = () => {
     <nav
       className={`${
         isScrolled ? "fixed top-0 w-full" : ""
-      } bg-commerce-teal outline outline-[6px] outline-offset-1 outline-commerce-mint`}
+      } bg-commerce-teal outline outline-[6px] outline-offset-1 outline-commerce-mint z-50`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 flex-row items-center justify-between">

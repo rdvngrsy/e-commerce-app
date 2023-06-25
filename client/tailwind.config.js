@@ -37,6 +37,14 @@ export default {
         'commerce-mint': '#80ED99',
         'commerce-mint-2': '#c7f9cc',
       },
+      dropShadow: {
+        'commerce-carousel': '0 30px 10px rgba(0, 0, 0, 0.80)',
+        '3xl': '0 35px 35px rgba(0, 0, 0, 0.25)',
+        '4xl': [
+            '0 15px 10px rgba(0, 0, 0, 0.75)',
+            '0 45px 10px rgba(0, 0, 0, 0.70)'
+        ]
+      }
     },
   },
   plugins: [],
