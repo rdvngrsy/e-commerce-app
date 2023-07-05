@@ -5,6 +5,9 @@ export default {
     "./src/**/*.{js,jsx}",
   ],
   theme: {
+    container: {
+      center: true,
+    },
     fontFamily: {
       'oswald': ['Oswald', 'sans-serif'],
       'zilla-slab': ['Zilla Slab', 'serif'],

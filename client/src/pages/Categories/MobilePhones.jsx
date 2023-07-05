@@ -15,7 +15,7 @@ const MobilePhones = () => {
 
   return (
     <>
-      <div className="mt-5 grid grid-cols-1 justify-items-center gap-y-2 sm:grid-cols-3 md:grid-cols-5 ">
+      <div className="container mt-5 grid grid-cols-1 justify-items-center gap-y-10 sm:grid-cols-3 md:grid-cols-4 ">
         {data.map((item) => (
             item.category === 'Mobile Phone' ? <Card key={item._id} item={item} /> : false
           

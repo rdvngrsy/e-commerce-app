@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import "../Carousel/Carousel.css"
+import "../HomeSlider/HomeSlider.css"
 
 function useTilt(animationDuration = '150ms') {
   const ref = useRef(null);
@@ -112,7 +112,7 @@ Slide.propTypes = {
   isPageBackground: PropTypes.bool,
 };
 
-const Carousel = ({ slides, isPageBackground }) => {
+const HomeSlider = ({ slides, isPageBackground }) => {
   const [slideIndex, setSlideIndex] = useState(slides.length-1);
 
   const handlePrevSlide = () => {
@@ -159,12 +159,12 @@ const Carousel = ({ slides, isPageBackground }) => {
   );
 };
 
-Carousel.propTypes = {
+HomeSlider.propTypes = {
   slides: PropTypes.array.isRequired,
   isPageBackground: PropTypes.bool,
 };
 
-export default Carousel;
+export default HomeSlider;
 
 
 
