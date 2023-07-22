@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import NavButton from "./NavButton";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
+import SearchBarResultsList from "./SearchBarResultsList";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -40,7 +42,7 @@ const Navbar = () => {
           </div>
 
           <div className="basis-1/3 md:basis-4/6">
-            <SearchBar />
+            <SearchBar/>
           </div>
 
 
