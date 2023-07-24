@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../Card/Card.css";
+import { Link } from "react-router-dom";
 
 const Card = ({ item }) => {
   const [isHover, setIsHover] = useState(false);
@@ -13,14 +14,15 @@ const Card = ({ item }) => {
   };
 
   return (
-    <div
+    <Link
+      to={`/products/${item._id}`}
       className={`${
         isHover ? "relative border-0" : ""
       }border border-grey-100 group flex h-[540px] w-full max-w-xs flex-col self-center overflow-hidden rounded-2xl bg-commerce-blue shadow-lg`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <a className="relative flex h-[320px] overflow-hidden" href="#">
+      <div className="relative flex h-[320px] overflow-hidden">
         <img
           className="peer absolute left-0 top-0 h-full w-full object-cover"
           src={item.photos[0]}
@@ -46,13 +48,13 @@ const Card = ({ item }) => {
             d="M2 10a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v10a4 4 0 0 1-2.328 3.635a2.996 2.996 0 0 0-.55-.756l-8-8A3 3 0 0 0 14 17v7H6a4 4 0 0 1-4-4V10Zm14 19a1 1 0 0 0 1.8.6l2.7-3.6H25a1 1 0 0 0 .707-1.707l-8-8A1 1 0 0 0 16 17v12Z"
           />
         </svg>
-      </a>
+      </div>
       <div className="mt-4 h-36 px-5">
-        <a href="#">
+        <div>
           <h5 className="font-oswald text-xl tracking-tight  text-white">
             {item.title}
           </h5>
-        </a>
+        </div>
         <div className="mt-2.5 flex items-center">
           <span className="mr-2 rounded bg-yellow-200 px-2.5 py-0.5 font-oswald text-xs font-bold">
             5.0
@@ -116,7 +118,7 @@ const Card = ({ item }) => {
       <div
         className={`${isHover ? "visible px-4" : "hidden"}`}
       >
-        <a
+        <div
           href="#"
           className="mb-3 flex w-full items-center justify-center rounded-xl bg-indigo-950 py-2.5 text-center font-oswald text-sm font-medium text-white transition duration-200 ease-in hover:bg-commerce-green focus:outline-none focus:ring-4 focus:ring-blue-300"
         >
@@ -135,9 +137,9 @@ const Card = ({ item }) => {
             />
           </svg>
           Add to cart
-        </a>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

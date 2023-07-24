@@ -13,8 +13,19 @@ const Home = () => {
   if (isLoading) return "Loading...";
 
   if (error) return "An error has occurred: " + error.message;
+
+  const shuffle = arr => [...arr].sort(() => Math.random() - 0.5);
+  const shuffleData = shuffle(data);
   
- 
+
+  const laptopProduct = data.filter((item) =>
+    item.category === "Laptop" 
+  );
+
+  const tvProduct = data.filter((item) =>
+    item.category === "Tv" 
+  );
+
   const slides = [
     {
       id: 1,
@@ -65,13 +76,32 @@ const Home = () => {
       <div className="flex w-full justify-center drop-shadow-commerce-carousel">
         <HomeSlider slides={slides} />
       </div>
-      <div className="container grid grid-cols-1 ml-4 xs:mx-auto">
-        <h1 className="mb-5 text-3xl font-oswald tracking-wide">Super Price, Super Offer</h1>
+      <div className="container ml-4 grid grid-cols-1 xs:mx-auto">
+        <h1 className="mb-5 font-oswald text-3xl tracking-wide">
+          Super Price, Super Offer
+        </h1>
         <div className="">
-          <SimpleSlider/>
+          <SimpleSlider product={shuffleData} />
         </div>
       </div>
 
+      <div className="container ml-4 grid grid-cols-1 xs:mx-auto xs:mt-32">
+        <h1 className="mb-5 font-oswald text-3xl tracking-wide">
+          Super Laptop, Super Offer
+        </h1>
+        <div className="">
+          <SimpleSlider product={laptopProduct} />
+        </div>
+      </div>
+
+      <div className="container ml-4 grid grid-cols-1 xs:mx-auto xs:mt-32">
+        <h1 className="mb-5 font-oswald text-3xl tracking-wide">
+          Super Tv, Super Offer
+        </h1>
+        <div className="">
+          <SimpleSlider product={tvProduct} />
+        </div>
+      </div>
 
       <h1 className="flex h-screen items-center justify-center text-6xl">
         HOME
