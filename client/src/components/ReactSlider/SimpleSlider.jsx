@@ -3,8 +3,7 @@ import Slider from "react-slick";
 import "./slick.css";
 import "./slick-theme.css";
 import Card from "../../components/Card/Card";
-import { fetchProductList } from "../../api";
-import { useQuery } from "react-query";
+
 
 const SimpleSlider = ({product}) => {
 

@@ -1,16 +1,20 @@
 import React from "react";
 import HomeSlider from "../../components/HomeSlider/HomeSlider";
-import { fetchProductList } from "../../api";
+import { fetchProductListForAllCategories } from "../../api";
 import { useQuery } from "react-query";
-import Card from "../../components/Card/Card";
 import SimpleSlider from "../../components/ReactSlider/SimpleSlider";
+import { Spinner } from "@material-tailwind/react";
 
 const Home = () => {
   const { isLoading, error, data } = useQuery("product", () =>
-    fetchProductList()
+    fetchProductListForAllCategories()
   );
 
-  if (isLoading) return "Loading...";
+  if (isLoading) return (
+    <div className="flex min-h-screen items-center justify-center">
+      <Spinner color="teal" className="h-12 w-12" /> 
+    </div>
+  );
 
   if (error) return "An error has occurred: " + error.message;
 

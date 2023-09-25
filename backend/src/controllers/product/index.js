@@ -68,7 +68,7 @@ const Delete = async (req, res, next) => {
 	}
 };
 
-const limit = 30;
+const limit = 10;
 const GetList = async (req, res, next) => {
 	let { page } = req.query;
 
